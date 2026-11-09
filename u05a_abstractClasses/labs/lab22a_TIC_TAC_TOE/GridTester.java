@@ -4,6 +4,12 @@
 //Class -
 //Lab  -
 
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
 import static java.lang.System.*;
 import java.awt.Color;
 
@@ -29,5 +35,4 @@ public class GridTester
 		out.println(gridTest.getSpot(0,1));							
 	}
 }
-
 

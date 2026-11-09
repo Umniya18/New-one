@@ -19,20 +19,17 @@ public class Grid
 
 	public Grid(int rows, int cols)
 	{
-
-
+      setSize(rows,cols);
 	}
 
 	public void setSize(int rows, int cols)
 	{
-
-
+      grid = new Cell[rows][cols];
 	}
 
 	public void setSpot(int row,int col, Cell val)
 	{
-
-
+      grid[row][col] = val;
 	}
 	
 	public Cell getSpot(int row, int col)
@@ -42,12 +39,12 @@ public class Grid
 	
 	public int getNumRows()
 	{
-		return 0;
+		return grid.length;
 	}
 	
 	public int getNumCols()
 	{
-		return 0;
+		return grid[0].length;
 	}
 
 	public boolean drawGrid(Graphics window)
@@ -55,29 +52,37 @@ public class Grid
 		boolean full=true;
 		
 		//for loop for row
-
-
+      for(int r=0;r<grid.length;r++)
+		{
+      
 			//for loop for col
-
-				//get current Cell
-					//if it is null
-					
-					
-					//else
-
-
-
+			for(int c=0;c<grid[r].length;c++)
+			{
+				Cell spot = grid[r][c];
+            if(spot!=null) {
+               spot.draw(window);
+            }
+            else {
+               full = false;
+            }
+         }
+      }
 		return full;
+      //get current Cell
+		//if it is null
+		//else
 	}
 	
 	public String toString()
 	{
 		String output="";
-
-
-
-
-
+	   for(int r = 0; r < getNumRows(); r++) {
+         for(int c = 0; c < getNumCols(); c++) {
+            output+= grid[r][c] + " ";
+         }
+      }
+      output+="\n";
 		return output;
 	}
 }
+
